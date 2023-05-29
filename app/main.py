@@ -55,11 +55,27 @@ class Battleship:
                     if j == ship:
                         count += 1
                         continue
-                    if ship[0][0] == ship[0][1] == j[0][0] == j[0][1] and fabs(ship[1][1] - j[0][1]) < 2:
+                    if (
+                        ship[0][0] == ship[0][1] == j[0][0] == j[0][1]
+                    ) and (
+                        fabs(ship[1][1] - j[0][1]) < 2
+                    ):
                         return False
-                    if ship[0][1] == ship[1][1] == j[0][1] == j[1][1] and fabs(ship[1][0] - j[0][0]) < 2:
+                    if (
+                        ship[0][1] == ship[1][1] == j[0][1] == j[1][1]
+                    ) and (
+                        fabs(ship[1][0] - j[0][0]) < 2
+                    ):
                         return False
-                    if (ship[1][1] == j[0][1] + 1 or ship[1][1] == j[0][1] - 1) and (ship[1][0] == j[0][0] - 1):
+                    if (
+                            (
+                                ship[1][1] == j[0][1] + 1
+                            ) or (
+                                ship[1][1] == j[0][1] - 1
+                            )
+                    ) and (
+                            ship[1][0] == j[0][0] - 1
+                    ):
                         return False
 
                 if ship[0][0] == ship[1][0] or ship[0][1] == ship[1][1]:
